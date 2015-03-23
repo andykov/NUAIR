@@ -1,8 +1,10 @@
 /*** [HEADER] ***/
 .header {
-	background: url(../img/layout/header_bg2.jpg) no-repeat;
-	background-size: cover;
-	height: 100%;
+	&--index {	
+		background: url(../img/layout/header_bg2.jpg) no-repeat;
+		background-size: cover;
+		height: 100%;
+	}
 	.container {
 		height: 100%;
 		position: relative;
