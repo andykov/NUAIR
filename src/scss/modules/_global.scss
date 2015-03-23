@@ -40,6 +40,9 @@ h1,h2,h3 {
 h2 {
 	font-size: 30px;
 }
+h3 {
+	font-size: 18px;
+}
 .clr:after {
 	content: '';
 	display: table;
@@ -70,8 +73,11 @@ h2 {
 	transform: rotate(-90deg);
 	writing-mode: tb-rl; /* для IE ниже 9 */
 }
-.hide {
-	display: none;
+.left-col {
+	float: left;
+}
+.right-col {
+	float: right;
 }
 .map {
 	position: relative;

@@ -35,6 +35,13 @@
 			background-color: rgba(255,255,255,0.16);
 		}
 	}
+
+	&--distrib {
+		background: url('../img/distrib_header_img.png') no-repeat center 70px;
+		.header__nav {
+			margin-bottom: 68px;
+		}
+	}
 }
 @keyframes anchorPulse {
 	from {

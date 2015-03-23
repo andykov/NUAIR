@@ -7,3 +7,12 @@
          url('fonts/MSReferenceSansSerif.ttf') format('truetype'),
          url('fonts/MSReferenceSansSerif.svg#MSReferenceSansSerif') format('svg');
 }
+@font-face {
+    font-family: 'OpenSansRegular';
+    src: url('fonts/opensans-regular.eot');
+    src: url('fonts/opensans-regular.eot?#iefix') format('embedded-opentype'),
+         url('fonts/opensans-regular.woff') format('woff'),
+         url('fonts/opensans-regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
