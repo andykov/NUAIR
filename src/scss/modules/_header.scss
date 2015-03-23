@@ -11,6 +11,7 @@
 		position: absolute;
 		top: 76px;
 		right: 48px;
+		z-index: 10;
 	}
 	.anchor {
 		position: absolute;
@@ -21,7 +22,7 @@
 		height: 67px;
 		bottom: 67px;
 		left: 50%;
-		margin-left: 33px;
+		margin-left: -33px;
 		animation-name: anchorPulse;
 		animation-iteration-count: infinite;
 		animation-duration: 1s;

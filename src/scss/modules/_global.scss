@@ -6,6 +6,7 @@ html {
 	-webkit-text-size-adjust: 100%;
 }
 body {
+	background-color: #000;
 	min-width: 940px;
 	margin: 0;
 	padding: 0;
@@ -66,7 +67,6 @@ h2 {
 }
 .text90deg {
 	display: inline-block;
-	/*direction: rtl;*/
 	transform: rotate(-90deg);
 	writing-mode: tb-rl; /* для IE ниже 9 */
 }
@@ -77,7 +77,6 @@ h2 {
 	transition: height 0.8s;
 	&.open {
 		height: 100%;
-		/*overflow: visible;*/
 	}
 	&__text {
 		position: absolute;
