@@ -1,0 +1,40 @@
+.footer {
+	background-color: #787878;
+	border-bottom: 3px solid #ff0000;
+	height: 75px;
+	font-family: 'MSReferenceSansSerif', sans-serif;
+	font-size: 11px;
+	box-sizing: border-box;
+	&__logo {
+		float: left;
+		width: 90px;
+		padding-top: 22px;
+		img {
+			margin-bottom: 10px;
+		}
+	}
+	&__nav {
+		float: right;
+		padding-top: 30px;
+		ul {
+			float: left;
+			margin: 8px 18px 0 0;
+		}
+		li {
+			display: inline-block;
+			margin-left: 18px;
+		}
+		a {
+			color: #fff;
+		}
+		.language {
+			float: right;
+			a {
+				display: inline-block;
+			}
+		}
+	}
+	.copy {
+		color: #fff;
+	}
+}

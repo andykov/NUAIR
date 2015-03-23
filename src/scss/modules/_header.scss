@@ -1,0 +1,43 @@
+/*** [HEADER] ***/
+.header {
+	background: url(../img/layout/header_bg2.jpg) no-repeat;
+	background-size: cover;
+	height: 100%;
+	.container {
+		height: 100%;
+		position: relative;
+	}
+	.icon-age {
+		position: absolute;
+		top: 76px;
+		right: 48px;
+	}
+	.anchor {
+		position: absolute;
+		z-index: 10;
+		border-radius: 67px;
+		background: rgba(255,255,255,0.06) url('../img/arrow_down.png') no-repeat center center;
+		width: 67px;
+		height: 67px;
+		bottom: 67px;
+		left: 50%;
+		margin-left: 33px;
+		animation-name: anchorPulse;
+		animation-iteration-count: infinite;
+		animation-duration: 1s;
+		animation-fill-mode: both;
+		animation-direction: alternate;
+		&:hover {
+			animation: none;
+			background-color: rgba(255,255,255,0.16);
+		}
+	}
+}
+@keyframes anchorPulse {
+	from {
+		background-color: rgba(255,255,255,0.06);
+	}
+	to {
+		background-color: rgba(255,255,255,0.16);
+	}
+}
