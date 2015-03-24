@@ -1,5 +1,5 @@
 $(function() {
-	
+
 	var winH = $(window).height(); 
 
 	$('.header__slider').find('.slider').bxSlider({
@@ -52,7 +52,7 @@ $(function() {
 		};
 	});
 
-	$('.map--full').height(winH - ($('.header').height() + $('.footer').height()))
+	$('.map--full').height(winH - $('.header').height());
 
 	// smooth scroll anchor
 	$('.anchor').on('click', function(){
@@ -76,8 +76,19 @@ $(function() {
 		// 		$(slides).eq(-this.currentSlide).removeClass('fadeOutDownBig').addClass('fadeInUpBig');
 		// 	}
 		// });
-	
-if ($('.bx-loading').length === true) {
-	console.log(1);
-};
+
+	// function stickyFooter() { // при ресайзе будет срабатывать функция
+	// 	var footerHeight = $('.footer').outerHeight(true); // вычисляем высоту подвала включая отступы и рамку
+	// 	$('body').css({ // записываем полученую высоту подвала в элемент body
+	// 		'padding-bottom': footerHeight
+	// 	});
+	// };
+			
+ //    $(document).ready(function(){
+ //    	stickyFooter();
+ //    });
+	// $(window).resize(function () { // при ресайзе вызываем функцию
+	// 	stickyFooter();
+	// });
+
 }); // end jquery

@@ -46,7 +46,14 @@
 	font-family: 'OpenSansRegular';
 	background-color: #fff;
 	color: #393939;
-	padding: 45px 0 57px;
+	&__notice {
+		font-family: Georgia;
+		background-color: #000;
+		color: #fff;
+		margin-bottom: 57px;
+		font-size: 20px;
+		padding: 26px 0 5px;
+	}
 	&__sidebar,
 	&__cont {
 		float: left;
@@ -144,6 +151,22 @@
 }
 
 @media only screen and (max-width : 1024px) {
+	.header__nav {
+		&--index {
+			a {
+				font-size: 15px;
+			}
+		}
+		/*&.fixed {*/
+			.logo-nav {
+				width: 90px;
+				margin-top: 24px;
+			}
+			a {
+				font-size: 12px;
+			}
+		/*}*/
+	}
 	.header__slider {
 		.slider__desc {
 			left: 275px;
@@ -154,6 +177,16 @@
 			clear: both;
 			display: block;
 			margin: 0 auto;
+		}
+	}
+}
+@media only screen and (max-width : 940px) {
+	.header__nav {
+		li {
+			margin-left: 14px;
+		}
+		a {
+			font-size: 11px;
 		}
 	}
 }
