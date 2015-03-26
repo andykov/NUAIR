@@ -28,9 +28,9 @@
 			</div>
 		</nav>
 		<div class="container">
-			<span class="icon-age"><img src="img/age.png" alt=""></span>
+			<span class="icon-age"><img src="img/layout/age.png" alt=""></span>
 			<div class="header__slider">
-				<ul class="slider">
+				<ul id="headerSlider" class="slider">
 					<li class="slider__item">
 						<img class="slider__logo" src="img/logo_big.png" alt="">
 						<span class="text90deg">Колба кальяна– чаша для <br>воды (нижняя часть). </span>
@@ -60,10 +60,10 @@
 	</header>
 
 	<section id="aboutAnchor" class="about">
-		<span class="icon-age"><img src="img/age.png" alt=""></span>
+		<span class="icon-age"><img src="img/layout/age.png" alt=""></span>
 		<div class="about__slider">
-			<ul class="slider">
-				<li>
+			<ul id="aboutSlider" class="slider">
+				<li class="slider__item">
 					<div class="slider__img">
 						<img src="img/content_slider/img1.png" alt="">
 					</div>
@@ -85,7 +85,7 @@
 						</div>
 					</div>
 				</li>
-				<li>
+				<li class="slider__item">
 					<div class="slider__img">
 						<img src="img/content_slider/img1.png" alt="">
 					</div>
@@ -107,7 +107,7 @@
 						</div>
 					</div>
 				</li>
-				<li>
+				<li class="slider__item">
 					<div class="slider__img">
 						<img src="img/content_slider/img1.png" alt="">
 					</div>
@@ -129,7 +129,7 @@
 						</div>
 					</div>
 				</li>
-				<li>
+				<li class="slider__item">
 					<div class="slider__img">
 						<img src="img/content_slider/img1.png" alt="">
 					</div>
@@ -163,7 +163,7 @@
 
 	<section class="history">
 		<div class="container">
-			<span class="icon-age"><img src="img/age.png" alt=""></span>
+			<span class="icon-age"><img src="img/layout/age.png" alt=""></span>
 			<h2>История кальянов NUAIR</h2>
 			<div class="left-col">
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget odio.</p>
@@ -178,12 +178,12 @@
 
 
 	<section class="map map--index">
-		<a class="map__open" href="#map-canvas">Развернуть карту</a>
+		<a class="map__open anchor" href="#map-canvas">Развернуть карту</a>
 		<div class="map__text">
 			<h2>Карта Мира NUAIR</h2>
 			<p>Добавьте фото, как вы курите наш кальян в Instagram с хеш-тэгом <b>#nuair</b> и оно появится на нашей карте Мира</p>
 		</div>
-		<div id="map-canvas" class="map__index"></div>
+		<div id="map-canvas"></div>
 	</section>
 
 
@@ -191,7 +191,7 @@
 	<footer class="footer">
 		<div class="container">
 			<div class="footer__logo">
-				<img src="img/footer_logo.png" alt="">
+				<img src="img/layout/footer_logo.png" alt="">
 				<span class="copy">&copy;2015 Nuair</span>
 			</div>
 			<nav class="footer__nav">
@@ -214,59 +214,57 @@
 	<script src="js/vendor/jquery.bxslider.min.js"></script>
 	<script src="js/main.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
-<script>
+	<script>
+		function initialize() {
+		  var mapOptions = {
+		    zoom: 5,
+		    center: new google.maps.LatLng(52.0189152,12.9162819),
+		    disableDefaultUI: true,
+		    scrollwheel: false
+		  }
+		  var map = new google.maps.Map(document.getElementById('map-canvas'),
+		                                mapOptions);
 
-function initialize() {
-  var mapOptions = {
-    zoom: 5,
-    center: new google.maps.LatLng(52.0189152,12.9162819),
-    disableDefaultUI: true,
-    scrollwheel: false
-  }
-  var map = new google.maps.Map(document.getElementById('map-canvas'),
-                                mapOptions);
+		  setMarkers(map, beaches);
+		}
 
-  setMarkers(map, beaches);
-}
+		var beaches = [
+		  ['Нидерланды', 51.570461, 3.504427, 4],
+		  ['Со. Корк, Ирландия', 51.706827, -8.536587, 5],
+		  ['Польша', 52.140448, 14.886262, 3],
+		  ['Гданьский повят. Польша', 54.143339, 18.445832, 2],
+		  ['Беларусь', 52.915740, 27.498566, 1],
+		  ['Городокский район. Беларусь', 55.609583, 30.486847, 1]
+		];
 
-var beaches = [
-  ['Нидерланды', 51.570461, 3.504427, 4],
-  ['Со. Корк, Ирландия', 51.706827, -8.536587, 5],
-  ['Польша', 52.140448, 14.886262, 3],
-  ['Гданьский повят. Польша', 54.143339, 18.445832, 2],
-  ['Беларусь', 52.915740, 27.498566, 1],
-  ['Городокский район. Беларусь', 55.609583, 30.486847, 1]
-];
+		function setMarkers(map, locations) {
 
-function setMarkers(map, locations) {
+		  var image = {
+		    url: 'img/layout/marker.png',
+		    size: new google.maps.Size(55, 48),
+		    origin: new google.maps.Point(0,0),
+		    anchor: new google.maps.Point(0, 32)
+		  };
 
-  var image = {
-    url: 'img/marker.png',
-    size: new google.maps.Size(55, 48),
-    origin: new google.maps.Point(0,0),
-    anchor: new google.maps.Point(0, 32)
-  };
+		  var shape = {
+		      coords: [1, 1, 1, 20, 18, 20, 18 , 1],
+		      type: 'poly'
+		  };
+		  for (var i = 0; i < locations.length; i++) {
+		    var beach = locations[i];
+		    var myLatLng = new google.maps.LatLng(beach[1], beach[2]);
+		    var marker = new google.maps.Marker({
+		        position: myLatLng,
+		        map: map,
+		        icon: image,
+		        shape: shape,
+		        title: beach[0],
+		        zIndex: beach[3]
+		    });
+		  }
+		}
 
-  var shape = {
-      coords: [1, 1, 1, 20, 18, 20, 18 , 1],
-      type: 'poly'
-  };
-  for (var i = 0; i < locations.length; i++) {
-    var beach = locations[i];
-    var myLatLng = new google.maps.LatLng(beach[1], beach[2]);
-    var marker = new google.maps.Marker({
-        position: myLatLng,
-        map: map,
-        icon: image,
-        shape: shape,
-        title: beach[0],
-        zIndex: beach[3]
-    });
-  }
-}
-
-google.maps.event.addDomListener(window, 'load', initialize);
-
-</script>
+		google.maps.event.addDomListener(window, 'load', initialize);
+	</script>
 </body>
 </html>

@@ -19,7 +19,7 @@
 		position: absolute;
 		z-index: 10;
 		border-radius: 67px;
-		background: rgba(255,255,255,0.06) url('../img/arrow_down.png') no-repeat center center;
+		background: rgba(255,255,255,0.06) url('../img/layout/arrow_down.png') no-repeat center center;
 		width: 67px;
 		height: 67px;
 		bottom: 67px;
@@ -37,7 +37,7 @@
 	}
 
 	&--distrib {
-		background: url('../img/distrib_header_img.png') no-repeat center 70px;
+		background: url('../img/layout/distrib_header_img.png') no-repeat center 70px;
 		padding-bottom: 68px;
 	}
 }

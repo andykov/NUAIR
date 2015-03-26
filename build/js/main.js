@@ -2,18 +2,34 @@ $(function() {
 
 	var winH = $(window).height(); 
 
-	$('.header__slider').find('.slider').bxSlider({
+	// init header slider
+	$('#headerSlider').bxSlider({
 		slideSelector: '.slider__item',
 		controls: false
 	});
 
 	// init content slider
-	$('.about__slider').find('.slider').bxSlider({
+	$('#aboutSlider').bxSlider({
+		slideSelector: '.slider__item',
 		pagerCustom: '.about__slider-nav'
 	});
 
+	$('#catalogSliderOne').bxSlider({
+		controls: false,
+		mode: 'fade',
+		slideSelector: '.slider__item',
+		pagerCustom: '#sliderNavOne'
+	});
+	$('#catalogSliderTwo').bxSlider({
+		controls: false,
+		mode: 'fade',
+		slideSelector: '.slider__item',
+		pagerCustom: '#sliderNavTwo'
+	});
+
 	// fixed menu
-	var navFixed = $(".header__nav.not-fixed");
+	var navFixed = $(".header__nav.not-fixed"),
+		navHeight = $('.header__nav').height();
 
 	if ($(window).scrollTop()) {
 		navFixed.addClass("fixed").removeClass("header__nav--index not-fixed");
@@ -26,7 +42,7 @@ $(function() {
 				navFixed.addClass("not-fixed header__nav--index");
 				navFixed.removeClass("fixed hidden");
 			};
-			if (scroll > 110){
+			if (scroll > navHeight){
 				navFixed.addClass("hidden");
 			};
 			if (scroll > 120){
@@ -36,23 +52,25 @@ $(function() {
 		});
 	};
 
-	// google map hide/show full height
-	var mapIndexPage = $('.map--index'),
-		viewMap = $('.map__open').text();
+	// google map open/closed full height
+	var mapIndex = $('.map--index'),
+		viewMap = $('.map__open').text(),
+		mapIndexHeightDef = $('.map--index').height();
 
-	mapIndexPage.find('#map-canvas').height(winH);
-	$('.map__open').on('click', function(){
-		if (mapIndexPage.hasClass('open')) {
-			mapIndexPage.removeClass('open');
-			$(this).text(viewMap);
-			// $('#map-canvas')
-		} else {
-			mapIndexPage.addClass('open');
+	mapIndex.find('#map-canvas').height(winH - $('.footer').height());
+	mapIndex.find('.map__open').on('click', function(){
+		if (!mapIndex.hasClass('open')) {
+			mapIndex.height(winH - $('.footer').height()).addClass('open');
 			$(this).text('Свернуть карту');
+		} else {
+			mapIndex.height(mapIndexHeightDef);
+			mapIndex.removeClass('open');
+			$(this).text(viewMap);
 		};
 	});
 
-	$('.map--full').height(winH - $('.header').height());
+	// google map full screen
+	$('.map--full').height(winH - ($('.header').height() + $('.footer').height()));
 
 	// smooth scroll anchor
 	$('.anchor').on('click', function(){
@@ -62,33 +80,5 @@ $(function() {
 		}
 		return false;
 	});
-
-		// var glide = $('.slider').glide({
-		// 	arrowRightText: '',
-		// 	arrowLeftText: '',
-		// 	autoplay: false,
-		// 	circular: false,
-		// 	beforeTransition: function() {
-		// 		$(slides).eq(-this.currentSlide).removeClass('fadeInUpBig').addClass('fadeOutDownBig');
-
-		// 	},
-		// 	afterTransition: function() {
-		// 		$(slides).eq(-this.currentSlide).removeClass('fadeOutDownBig').addClass('fadeInUpBig');
-		// 	}
-		// });
-
-	// function stickyFooter() { // при ресайзе будет срабатывать функция
-	// 	var footerHeight = $('.footer').outerHeight(true); // вычисляем высоту подвала включая отступы и рамку
-	// 	$('body').css({ // записываем полученую высоту подвала в элемент body
-	// 		'padding-bottom': footerHeight
-	// 	});
-	// };
-			
- //    $(document).ready(function(){
- //    	stickyFooter();
- //    });
-	// $(window).resize(function () { // при ресайзе вызываем функцию
-	// 	stickyFooter();
-	// });
 
 }); // end jquery

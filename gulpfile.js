@@ -11,6 +11,7 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     pngquant = require('imagemin-pngquant'),
     rimraf = require('rimraf'),
+    plumber = require('gulp-plumber'),
     connect = require('gulp-connect'),
     opn = require('opn');
 
@@ -26,7 +27,7 @@ var path = {
     src: { //Пути откуда брать исходники
         html: 'src/*.html', //Синтаксис src/*.html говорит gulp что мы хотим взять все файлы с расширением .html
         js: 'src/js/*.js',//В стилях и скриптах нам понадобятся только main файлы
-        jsVendor: 'src/js/vendor/*.js',//В стилях и скриптах нам понадобятся только main файлы
+        jsVendor: 'src/js/vendor/*.js',// Перекидываем библиотеки
         style: 'src/scss/main.scss',
         img: 'src/img/**/*.*', //Синтаксис img/**/*.* означает - взять все файлы всех расширений из папки и из вложенных каталогов
         fonts: 'src/scss/fonts/**/*.*'
@@ -60,6 +61,7 @@ gulp.task('html:build', function () {
 gulp.task('style:build', function () {
     gulp.src(path.src.style) //Выберем наш main.scss
         // .pipe(sourcemaps.init()) //То же самое что и с js
+        .pipe(plumber())
         .pipe(sass()) //Скомпилируем
         .pipe(prefixer()) //Добавим вендорные префиксы
         // .pipe(cssmin()) //Сожмем
@@ -125,6 +127,7 @@ gulp.task('watch', function() {
 // Поднимаем сервер
 gulp.task('webserver', function() {
     connect.server({
+    	root: './build',
         host: server.host,
         port: server.port,
         livereload: true
@@ -139,7 +142,7 @@ gulp.task('clean', function (cb) {
 
 // Открываем проект в браузере
 gulp.task('openbrowser', function() {
-    opn( 'http://' + server.host + ':' + server.port + '/build' );
+    opn( 'http://' + server.host + ':' + server.port + '/' );
 });
 
 // Запускаем всю сборку одним таском
