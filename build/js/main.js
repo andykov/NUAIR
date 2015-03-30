@@ -26,9 +26,21 @@ $(function() {
 		slideSelector: '.slider__item',
 		pagerCustom: '#sliderNavTwo'
 	});
+	$('#catalogSliderThree').bxSlider({
+		controls: false,
+		mode: 'fade',
+		slideSelector: '.slider__item',
+		pagerCustom: '#sliderNavThree'
+	});
+	$('#catalogSliderFour').bxSlider({
+		mode: 'fade',
+		slideSelector: '.slider__item',
+		pagerCustom: '#sliderNavFour'
+	});
 
 	// fixed menu
-	var navFixed = $(".header__nav.not-fixed"),
+	var navFixed = $(".header__nav"),
+		navFixedIndex = $('.header__nav--index'),
 		navHeight = $('.header__nav').height();
 
 	if ($(window).scrollTop()) {
@@ -39,15 +51,17 @@ $(function() {
 		$(window).scroll(function(){
 			var scroll = $(window).scrollTop();
 			if (scroll < 120) {
-				navFixed.addClass("not-fixed header__nav--index");
+				navFixed.addClass("not-fixed");
 				navFixed.removeClass("fixed hidden");
+				navFixedIndex.addClass("header__nav--index");
 			};
 			if (scroll > navHeight){
 				navFixed.addClass("hidden");
 			};
 			if (scroll > 120){
 				navFixed.addClass("fixed");
-				navFixed.removeClass("header__nav--index not-fixed hidden");
+				navFixed.removeClass("not-fixed hidden");
+				navFixedIndex.removeClass("header__nav--index");
 			};
 		});
 	};
