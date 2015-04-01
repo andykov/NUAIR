@@ -256,4 +256,24 @@
 			margin: 0;
 		}
 	}
+	&__form {
+		margin-bottom: 140px;
+	}
+	.button {
+		text-align: right;
+	}
+}
+.form__fields {
+	margin-top: 30px;
+	.inputs {
+		width: 260px;
+		float: left;
+		margin: 0 13px 30px 0;
+		input {
+			margin-bottom: 13px;
+		}
+	}
+	textarea {
+		height: 115px;
+	}
 }

@@ -68,8 +68,10 @@ input[type="submit"] {
 }
 textarea {
 	resize: none;
-	width: 260px;
-	height: 107px;
+	max-width: 795px;
+	min-width: 260px;
+	min-height: 107px;
+	width: 100%;
 }
 .inner-page {
 	background-color: #000;
