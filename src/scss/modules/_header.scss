@@ -39,6 +39,11 @@
 	&--distrib {
 		background: $bg-distrib no-repeat center 70px;
 		padding-bottom: 68px;
+		height: 138px;
+		box-sizing: border-box;
+	}
+	&--recipes {
+		height: 70px;
 	}
 }
 @keyframes anchorPulse {

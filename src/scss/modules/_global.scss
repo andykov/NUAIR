@@ -40,6 +40,37 @@ h2 {
 h3 {
 	font-size: 18px;
 }
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+textarea {
+	outline: none;
+	background-color: rgba(255,255,255,0.17);
+	border: 1px solid transparent;
+	border-radius: 6px;
+	box-sizing: border-box;
+	&:focus {
+		border: 1px solid #949494;
+	}
+}
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"] {
+	max-width: 260px;
+	width: 100%;
+	padding: 15px 10px;
+}
+input[type="submit"] {
+	border: 0;
+	outline: none;
+}
+textarea {
+	resize: none;
+	width: 260px;
+	height: 107px;
+}
 .inner-page {
 	background-color: #000;
 }
@@ -97,7 +128,6 @@ h3 {
 	&__text {
 		position: absolute;
 		left: 0;
-		/*bottom: 55px;*/
 		top: 38px;
 		width: 430px;
 		background-color: rgba(255,255,255, 0.8);

@@ -63,10 +63,6 @@
 		width: 230px;
 	}
 	&__cont {
-/*		max-width: 890px;
-		width: 100%;
-		padding-top: 44px;
-		padding-left: 26px;*/
 		width: 100%;
 		padding-left: 255px;
 		padding-top: 44px;
@@ -184,37 +180,6 @@
 	}
 }
 
-input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="tel"],
-textarea {
-	outline: none;
-	background-color: rgba(255,255,255,0.17);
-	border: 1px solid transparent;
-	border-radius: 6px;
-	box-sizing: border-box;
-	&:focus {
-		border: 1px solid #949494;
-	}
-}
-input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="tel"] {
-	max-width: 260px;
-	width: 100%;
-	padding: 15px 10px;
-}
-input[type="submit"] {
-	border: 0;
-	outline: none;
-}
-textarea {
-	resize: none;
-	width: 260px;
-	height: 107px;
-}
 .form {
 	font-family: 'OpenSansRegular';
 	background-color: #131313;
@@ -242,3 +207,53 @@ textarea {
 	}
 }
 
+
+
+/*** [#PAGE RECIPES] ***/
+.recipes {
+	color: #fff;
+	&__intro {
+		background: $recipes-intro-bg no-repeat center center;
+		padding: 27px 0 25px;
+		margin-bottom: 90px;
+		p {
+			margin: 0;
+		}
+	}
+	&__item {
+		overflow: hidden;
+		margin-bottom: 37px;
+	}
+	&__img {
+		float: left;
+		margin-left: 9.4642%;
+		width: 255px;
+	}
+	&__text {
+		float: right;
+		font-size: 20px;
+		width: 49.5535%;
+		padding-top: 10px;
+		h2 {
+			font-size: 40px;
+			margin-bottom: 26px;
+		}
+		p {
+			margin-bottom: 23px;
+		}
+	}
+	&__ingred {
+		background-color: rgba(255,255,255,0.14);
+		border-radius: 6px;
+		padding: 15px 20px 18px;
+		font-size: 14px;
+		margin: 0 0 20px 20px;
+		h4 {
+			font-size: 20px;
+			margin: 0;
+		}
+		p {
+			margin: 0;
+		}
+	}
+}

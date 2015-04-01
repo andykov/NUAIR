@@ -375,6 +375,29 @@ h2 {
 h3 {
   font-size: 18px; }
 
+input[type="text"], input[type="email"], input[type="password"], input[type="tel"], textarea {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.17);
+  border: 1px solid transparent;
+  border-radius: 6px;
+  box-sizing: border-box; }
+  input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, input[type="tel"]:focus, textarea:focus {
+    border: 1px solid #949494; }
+
+input[type="text"], input[type="email"], input[type="password"], input[type="tel"] {
+  max-width: 260px;
+  width: 100%;
+  padding: 15px 10px; }
+
+input[type="submit"] {
+  border: 0;
+  outline: none; }
+
+textarea {
+  resize: none;
+  width: 260px;
+  height: 107px; }
+
 .inner-page {
   background-color: #000; }
 
@@ -432,7 +455,6 @@ h3 {
   .map__text {
     position: absolute;
     left: 0;
-    /*bottom: 55px;*/
     top: 38px;
     width: 430px;
     background-color: rgba(255, 255, 255, 0.8);
@@ -505,7 +527,11 @@ h3 {
     background-color: rgba(255, 255, 255, 0.16); }
 .header--distrib {
   background: url('../img/layout/distrib_header_img.png') no-repeat center 70px;
-  padding-bottom: 68px; }
+  padding-bottom: 68px;
+  height: 138px;
+  box-sizing: border-box; }
+.header--recipes {
+  height: 70px; }
 
 @-webkit-keyframes anchorPulse {
   from {
@@ -701,10 +727,6 @@ h3 {
   .distrib__sidebar {
     width: 230px; }
   .distrib__cont {
-    /*		max-width: 890px;
-		width: 100%;
-		padding-top: 44px;
-		padding-left: 26px;*/
     width: 100%;
     padding-left: 255px;
     padding-top: 44px;
@@ -794,29 +816,6 @@ h3 {
     width: 310px;
     float: right; }
 
-input[type="text"], input[type="email"], input[type="password"], input[type="tel"], textarea {
-  outline: none;
-  background-color: rgba(255, 255, 255, 0.17);
-  border: 1px solid transparent;
-  border-radius: 6px;
-  box-sizing: border-box; }
-  input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, input[type="tel"]:focus, textarea:focus {
-    border: 1px solid #949494; }
-
-input[type="text"], input[type="email"], input[type="password"], input[type="tel"] {
-  max-width: 260px;
-  width: 100%;
-  padding: 15px 10px; }
-
-input[type="submit"] {
-  border: 0;
-  outline: none; }
-
-textarea {
-  resize: none;
-  width: 260px;
-  height: 107px; }
-
 .form {
   font-family: 'OpenSansRegular';
   background-color: #131313;
@@ -837,6 +836,44 @@ textarea {
     border-radius: 6px; }
     .form .btn:hover {
       background-color: rgba(255, 0, 0, 0.42); }
+
+/*** [#PAGE RECIPES] ***/
+.recipes {
+  color: #fff; }
+  .recipes__intro {
+    background: url('../img/layout/recipes_header_bg.png') no-repeat center center;
+    padding: 27px 0 25px;
+    margin-bottom: 90px; }
+    .recipes__intro p {
+      margin: 0; }
+  .recipes__item {
+    overflow: hidden;
+    margin-bottom: 37px; }
+  .recipes__img {
+    float: left;
+    margin-left: 9.4642%;
+    width: 255px; }
+  .recipes__text {
+    float: right;
+    font-size: 20px;
+    width: 49.5535%;
+    padding-top: 10px; }
+    .recipes__text h2 {
+      font-size: 40px;
+      margin-bottom: 26px; }
+    .recipes__text p {
+      margin-bottom: 23px; }
+  .recipes__ingred {
+    background-color: rgba(255, 255, 255, 0.14);
+    border-radius: 6px;
+    padding: 15px 20px 18px;
+    font-size: 14px;
+    margin: 0 0 20px 20px; }
+    .recipes__ingred h4 {
+      font-size: 20px;
+      margin: 0; }
+    .recipes__ingred p {
+      margin: 0; }
 
 /*** [#COMMON SLIDER STYLE] ***/
 .about__slider--full .slider__img, .about__slider--full .slider__cont, .catalog__slider--full .slider__img, .catalog__slider--full .slider__cont {
