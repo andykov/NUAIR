@@ -94,13 +94,59 @@ textarea {
 		clear: both;
 	}
 }
+.anchor {
+	position: absolute;
+	z-index: 10;
+	border-radius: 67px;
+	background: rgba(255,255,255,0.06) $anchor-arrow no-repeat center center;
+	width: 67px;
+	height: 67px;
+	bottom: 67px;
+	left: 50%;
+	margin-left: -33px;
+	animation-name: anchorPulse;
+	animation-iteration-count: infinite;
+	animation-duration: 1s;
+	animation-fill-mode: both;
+	animation-direction: alternate;
+	&:hover {
+		animation: none;
+		background-color: rgba(255,255,255,0.16);
+	}
+}
 .btn {
+	background-color: rgba(255,255,255, 0.12);
 	display: inline-block;
 	color: #fff;
 	border: 2px solid #fff;
 	padding: 10px 20px;
 	border-radius: 20px;
 	text-transform: uppercase;
+	&--red {
+		background-color: rgba(255,0,0,0.45);
+		color: #fff;
+		padding: 18px 40px;
+		border-radius: 6px;
+		border: 0;
+		&:hover {
+			background-color: rgba(255,0,0,0.40);
+		}
+	}
+}
+.social {
+	a {
+		display: inline-block;
+		background: $social no-repeat;
+		width: 41px;
+		height: 41px;
+		margin-left: 15px;
+		&.social__tw { background-position: 0 0; }
+		&.social__fb { background-position: -92px 0; }
+		&.social__pt { background-position: -46px 0; }
+		&.social__tw:hover { background-position: 0 -46px; }
+		&.social__fb:hover { background-position: -92px -46px; }
+		&.social__pt:hover { background-position: -46px -46px; }
+	}
 }
 .text90deg {
 	display: inline-block;

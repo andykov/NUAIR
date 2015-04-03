@@ -34,6 +34,15 @@
 		font-size: 15px;
 		text-transform: uppercase;
 		color: #fff;
+		border-bottom: 2px solid transparent;
+		padding-bottom: 2px;
+		transition: border 0.2s;
+		&:hover {
+			border-color: #ff0000;
+		}
+	}
+	.active {
+		border-color: #ff0000;
 	}
 	/*STYLE INDEX PAGE*/
 	&--index {

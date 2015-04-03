@@ -2,6 +2,7 @@
 .about__slider,
 .catalog__slider {
 	&--full {
+		overflow: hidden;
 		.slider__img,
 		.slider__cont {
 			display: table-cell;
@@ -116,6 +117,9 @@
 
 /*** [#ABOUT SLIDER] ***/
 .about__slider {
+	&--full {
+		height: 636px;
+	}
 	.slider__img {
 		width: 43%;
 		text-align: center;
@@ -173,12 +177,17 @@
 			background: $about-slider-nav-bg no-repeat center -17px / cover;
 		}
 	}
+	& .active {
+		background: $about-slider-nav-bg no-repeat center -17px / cover;
+	}
 }
 
 /*** [#CATALOG SLIDER] ***/
 .catalog__slider {
 	position: relative;
+	height: 740px;
 	&--full {
+		height: 474px;
 		.slider__img,
 		.slider__cont {
 			width: 50%;
@@ -217,7 +226,7 @@
 		a {
 			display: inline-block;
 			border-radius: 96px;
-			border: 3px solid rgba(0,0,0,0);
+			border: 3px solid #787878;
 			&:hover {
 				border: 3px solid rgba(255,0,0,0.2);
 			}
@@ -233,7 +242,7 @@
 			}
 		}
 		&--right {
-			right: 40px;
+			right: 0;
 			bottom: 100px;
 			a {
 				margin-left: 20px;
@@ -252,7 +261,7 @@
 		}
 	}
 	.slider__text {
-		width: 330px;
+		width: 355px;
 		color: #fff;
 		line-height: 1.25;
 		h2 {
@@ -279,18 +288,49 @@
 			bottom: 205px;
 		}
 		&--rt {
-			right: 40px;
+			right: 0;
 			top: 162px;
+			.button {
+				padding-top: 20px;
+				text-align: center;
+			}
+		}
+		ul {
+			list-style: disc;
+			font-size: 18px;
+			padding: 30px 0 40px 50px;
+		}
+		.btn--red {
+			padding: 23px 67px 23px 92px;
+			background: rgba(255, 0, 0, 0.45) url('../img/layout/buy_btn.png') no-repeat 53px center;
+			font-family: 'OpenSansRegular';
+			font-size: 17px;
+			&:hover {
+				background-color: rgba(255,0,0,0.40);
+			}
 		}
 	}
 	.slider__img {
 		text-align: center;
 	}
+	.buy {
+		border-top: 1px solid #fff;
+		text-align: center;
+		padding-top: 20px;
+		span {
+			font-size: 41px;
+			padding-bottom: 4px;
+		}
+	}
 	.btn {
 		margin-top: 24px;
 		padding-left: 60px;
 		padding-right: 60px;
-		background-color: rgba(255,255,255, 0.12);
+	}
+	.social {
+		position: absolute;
+		right: 65px;
+		bottom: 80px;
 	}
 }
 .bg-lineup {
